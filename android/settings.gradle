@@ -62,5 +62,7 @@ if (getRNMinorVersion() < 75) {
   applyNativeModulesSettingsGradle(settings)
 }
 
+include ':vpnLib'
+project(':vpnLib').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-simple-openvpn/vpnLib')
 include ':app'
 includeBuild(new File(["node", "--print", "require.resolve('@react-native/gradle-plugin/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim()).getParentFile())

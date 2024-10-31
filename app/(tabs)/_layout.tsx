@@ -15,7 +15,17 @@ export default function TabLayout() {
         headerShown: false,
       }}>
       <Tabs.Screen
+        name="ovpn"
+        options={{
+          title: 'RNOvpn',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'key' : 'key-outline'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="index"
+        redirect
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
@@ -25,6 +35,7 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="explore"
+        redirect
         options={{
           title: 'Explore',
           tabBarIcon: ({ color, focused }) => (
